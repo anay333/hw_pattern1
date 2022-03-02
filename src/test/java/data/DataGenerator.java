@@ -1,24 +1,55 @@
 package data;
 
 import com.github.javafaker.Faker;
-import info.RegistrationInfo;
-import lombok.experimental.UtilityClass;
+import lombok.Value;
 
 import java.time.LocalDate;
 import java.util.Locale;
 
-@UtilityClass
-public class DataGenerator {
 
-    @UtilityClass
+public class DataGenerator {
+    private DataGenerator() {
+    }
+
+    public static LocalDate generateDate(int shift) {
+        LocalDate date = LocalDate.now().plusDays(shift);
+        return date;
+    }
+
+    public static String generateCity(String locale) {
+        Faker faker = new Faker(new Locale(locale));
+        String city = faker.address().cityName();
+        return city;
+    }
+
+    public static String generateName(String locale) {
+        Faker faker = new Faker(new Locale(locale));
+        String name = faker.name().fullName();
+        return name;
+    }
+
+    public static String generatePhone(String locale) {
+        Faker faker = new Faker(new Locale(locale));
+        String phone = faker.phoneNumber().phoneNumber();
+        return phone;
+    }
+
     public static class Registration {
-        public static RegistrationInfo generateInfo(String locale) {
-            Faker faker= new Faker(new Locale(locale));
-            return new RegistrationInfo (faker.name().fullName(),
-                    faker.phoneNumber().phoneNumber(),
-                    faker.address().cityName(),
-                    LocalDate.now().plusDays(5)
-                    );
+        private Registration() {
         }
+
+
+        public static UserInfo generateUser(String locale) {
+            Faker faker = new Faker(new Locale(locale));
+            UserInfo user = new UserInfo(generateCity(locale), generateName(locale), generatePhone(locale));
+            return user;
+        }
+    }
+
+    @Value
+    public static class UserInfo {
+        String city;
+        String name;
+        String phone;
     }
 }
