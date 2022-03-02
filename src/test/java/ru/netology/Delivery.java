@@ -46,8 +46,9 @@ public class Delivery {
         $("[data-test-id='phone'] input").setValue(validUser.getPhone());
         $(Selectors.withText("Запланировать")).click();
         $(Selectors.withText("Перепланировать")).click();
-        $("[class='notification__content']").shouldBe(Condition.visible)
+        $("[class='notification__content']").shouldBe(Condition.appear)
                 .$(Selectors.withText("Встреча успешно запланирована на " + secondMeetingDate));
+
     }
 
     }
