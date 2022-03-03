@@ -34,7 +34,7 @@ public class Delivery {
         $("[data-test-id='phone'] input").setValue(validUser.getPhone());
         $("[data-test-id='agreement']").click();
        $(Selectors.withText("Запланировать")).click();
-       $("[class='notification__content']").shouldBe(Condition.appear)
+       $("[class='notification__content']").shouldBe(Condition.visible)
                .$(Selectors.withText("Встреча успешно запланирована на " + firstMeetingDate));
         $("[data-test-id='city'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='city'] input").setValue(validUser.getCity());
