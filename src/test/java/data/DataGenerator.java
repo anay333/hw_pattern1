@@ -4,7 +4,9 @@ import com.github.javafaker.Faker;
 import lombok.Value;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Locale;
+import java.util.Random;
 
 
 public class DataGenerator {
@@ -12,20 +14,29 @@ public class DataGenerator {
     }
 
     public static LocalDate generateDate(int shift) {
-        LocalDate date = LocalDate.now().plusDays(shift);
+
+
+              LocalDate date = LocalDate.now().plusDays(shift);
         return date;
     }
 
-    public static String generateCity(String locale) {
-        Faker faker = new Faker(new Locale(locale));
-        String city = faker.address().cityName();
-        return city;
+    public static String generateCity() {
+        String[] city = {"Казань", "Москва", "Уфа", "Майкоп", "Горно-Алтайск", "Улан-Удэ", "Махачкала", "Магас",
+                "Нальчик", "Элиста",};
+        int index = new Random().nextInt(city.length);
+        return city[index];
     }
 
-    public static String generateName(String locale) {
+    public static String generateFirstName(String locale) {
         Faker faker = new Faker(new Locale(locale));
-        String name = faker.name().fullName();
-        return name;
+        String firstName = faker.name().firstName();
+        return firstName;
+    }
+
+    public static String generateLastName(String locale) {
+        Faker faker = new Faker(new Locale(locale));
+        String lastName = faker.name().lastName();
+        return lastName;
     }
 
     public static String generatePhone(String locale) {
@@ -41,7 +52,7 @@ public class DataGenerator {
 
         public static UserInfo generateUser(String locale) {
             Faker faker = new Faker(new Locale(locale));
-            UserInfo user = new UserInfo(generateCity(locale), generateName(locale), generatePhone(locale));
+            UserInfo user = new UserInfo(generateCity(), generateFirstName(locale), generateLastName(locale), generatePhone(locale));
             return user;
         }
     }
@@ -49,7 +60,8 @@ public class DataGenerator {
     @Value
     public static class UserInfo {
         String city;
-        String name;
+        String firstName;
+        String lastName;
         String phone;
     }
 }
