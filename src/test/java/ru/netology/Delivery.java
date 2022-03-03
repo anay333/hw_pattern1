@@ -30,7 +30,7 @@ public class Delivery {
         $("[data-test-id='city'] input").setValue(validUser.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(firstMeetingDate);
-        $("[data-test-id='name'] input").setValue(validUser.getFirstName()+validUser.getLastName());
+        $("[data-test-id='name'] input").setValue(validUser.getFirstName()+" "+validUser.getLastName());
         $("[data-test-id='phone'] input").setValue(validUser.getPhone());
         $("[data-test-id='agreement']").click();
        $(Selectors.withText("Запланировать")).click();
@@ -41,13 +41,13 @@ public class Delivery {
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(secondMeetingDate);
         $("[data-test-id='name'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
-        $("[data-test-id='name'] input").setValue(validUser.getFirstName()+validUser.getLastName());
+        $("[data-test-id='name'] input").setValue(validUser.getFirstName()+" "+validUser.getLastName());
         $("[data-test-id='phone'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='phone'] input").setValue(validUser.getPhone());
         $(Selectors.withText("Запланировать")).click();
         $(Selectors.withText("Перепланировать")).click();
         $("[class='notification__content']").shouldBe(Condition.appear)
-                .$(Selectors.withText("Встреча успешно запланирована на " + secondMeetingDate));
+               .$(Selectors.byText("Встреча успешно запланирована на " + secondMeetingDate));
 
     }
 
