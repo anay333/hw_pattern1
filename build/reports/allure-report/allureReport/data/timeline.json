@@ -1,0 +1,30 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "LAPTOP-0KBJ9278",
+    "children" : [ {
+      "name" : "24240@LAPTOP-0KBJ9278.Test worker(13)",
+      "children" : [ {
+        "name" : "Should successful plan and replan meeting",
+        "uid" : "369444cfe6b5adbb",
+        "parentUid" : "4eb933538bb48ede26de8436b62dc6f5",
+        "status" : "broken",
+        "time" : {
+          "start" : 1649223464437,
+          "stop" : 1649223525198,
+          "duration" : 60761
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4eb933538bb48ede26de8436b62dc6f5"
+    } ],
+    "uid" : "f01308be733a2e764224d80461117900"
+  } ]
+}

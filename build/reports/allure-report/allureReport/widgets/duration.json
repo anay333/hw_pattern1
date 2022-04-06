@@ -1,0 +1,11 @@
+[ {
+  "uid" : "369444cfe6b5adbb",
+  "name" : "Should successful plan and replan meeting",
+  "time" : {
+    "start" : 1649223464437,
+    "stop" : 1649223525198,
+    "duration" : 60761
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]

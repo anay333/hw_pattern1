@@ -1,0 +1,30 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "Timed out waiting for driver server to start.\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'LAPTOP-0KBJ9278', ip: '10.227.225.131', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'\nDriver info: driver.version: SelenideDriver\nselenide.url: http://localhost:9999\nselenide.baseUrl: http://localhost:8080",
+      "children" : [ {
+        "name" : "Should successful plan and replan meeting",
+        "uid" : "369444cfe6b5adbb",
+        "parentUid" : "7d74512a4cec880133f19891a80680a6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1649223464437,
+          "stop" : 1649223525198,
+          "duration" : 60761
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7d74512a4cec880133f19891a80680a6"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

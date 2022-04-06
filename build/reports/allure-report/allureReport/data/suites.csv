@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Wed Apr 06 10:37:44 YEKT 2022","Wed Apr 06 10:38:45 YEKT 2022","60761","","ru.netology.Delivery","","ru.netology.Delivery","shouldSuccessfulPlanAndReplanMeeting","Should successful plan and replan meeting",""
