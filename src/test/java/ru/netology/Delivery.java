@@ -55,7 +55,7 @@ public class Delivery {
         $("[data-test-id='phone'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='phone'] input").setValue(validUser.getPhone());
         $(Selectors.withText("Запланировать")).click();
-        $("#root > div > div:nth-child(4) > div.notification__content > button").click();
+        $("div.notification__content > button").click();
         $("[class='notification__content']").shouldBe(Condition.appear)
                .$(Selectors.byText("Встреча успешно запланирована на " + secondMeetingDate));
 
